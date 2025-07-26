@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mixed Flowers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+<header class="bg-[#F2E7DD] p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-8">
+        <div class="flex flex-col items-center space-x-2">
+            <img alt="Logo" class="h-12 w-12 rounded-full" height="50" src="logo2.jpg" width="50"/>
+            <span class="text-2xl font-great-vibes text-gray-800 fade-in">Floralland</span>
+        </div>
+        <nav class="flex space-x-8">
+            <a class="text-gray-700" href="DupHome.html">Home</a>
+            <a class="text-gray-700 fade-link" href="DupHome.html">Flowers by Type</a>
+            <a class="text-gray-700" href="#">Occasions</a>
+            <a class="text-gray-700" href="About us.html">About Us</a>
+            <a class="text-gray-700" href="Contact us.html">Contact Us</a>
+        </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+        <div class="relative">
+            <input class="p-2 border border-gray-300 rounded pl-4 pr-10" id="searchInput" placeholder="Search flowers" type="text" oninput="searchFlowers()"/>
+            <i class="fas fa-search absolute right-3 top-3 text-gray-500 cursor-pointer" onclick="searchFlowers()"></i>
+        </div>
+        <a class="text-gray-700" href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+        <a class="text-gray-700" href="#"><i class="fas fa-user"></i></a>
+    </div>
+</header>
+<main class="p-8 fade-in">
+    <h1 class="text-2xl text-left mb-8 font-great-vibes">Mixed Flowers</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="flowerGrid">
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including roses, lilies, and daisies in vibrant colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/dKFeYmB1TTkFq5wALGVpb0ugDUAshnz6fbRvyK_w_zg.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Vibrant Mix</h2>
+            <p class="text-gray-600">₹1200</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including sunflowers, tulips, and carnations in bright colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/HsLr0Xv7XlDxo2FDtkUYRTXeNydyUP0z9iFPfJ1KpzI.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Sunshine Bouquet</h2>
+            <p class="text-gray-600">₹1500</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including orchids, roses, and lilies in pastel colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/tDJ72RBbReOcsmXK9q4zapi96en8vq4W2mUYtQbMHCY.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Pastel Dream</h2>
+            <p class="text-gray-600">₹1800</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including daisies, roses, and tulips in soft colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/1lE8ySf1odDl1AJXsjWMubDwcJO-ilSVEOqLqf0Cyug.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Soft Elegance</h2>
+            <p class="text-gray-600">₹1350</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including roses, lilies, and chrysanthemums in bold colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/z4rCHhG_4L8KYP3ihIlp3VgP7PA51x4a1eE5kLOaKTo.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Bold Beauty</h2>
+            <p class="text-gray-600">₹1600</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including tulips, roses, and daisies in vibrant colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/cl2xn1RxRJnG7J0bPwOwCikOc-ZbHCZLhEPN2B-x6E0.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Spring Delight</h2>
+            <p class="text-gray-600">₹1400</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including lilies, roses, and sunflowers in bright colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/YFFH48lG5kO_opOsXE7K8ToScwQQEEFwgRMQuvOhJIE.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Summer Bliss</h2>
+            <p class="text-gray-600">₹1750</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including roses, tulips, and daisies in soft colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/JCSxvewAK6dL9gMx_Hq4so_EYEKHPwUBHHa49CgTlAo.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Gentle Harmony</h2>
+            <p class="text-gray-600">₹1550</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including orchids, roses, and lilies in vibrant colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/ClIU7ZegAuKK4CzeOmhwsvZZvAzVDmoJLUNP8IlQZEQ.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Orchid Fantasy</h2>
+            <p class="text-gray-600">₹1900</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including roses, lilies, and chrysanthemums in soft colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/d_jZR-wYKUsLj_cjxUeRqUyn18aCt5-T1eFgSpllJXo.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Tranquil Garden</h2>
+            <p class="text-gray-600">₹1450</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including tulips, roses, and daisies in bright colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/sOe8274ra34D5mSBNN4tgfUXOCfe8Ji_q5Zr_oLC3pU.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Bright Harmony</h2>
+            <p class="text-gray-600">₹1650</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed flowers including roses, lilies, and sunflowers in vibrant colors" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/p0n_suD_KvMV3VyurVVkiwZBU0WgbxY_KAZrk9nQN90.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Radiant Mix</h2>
+            <p class="text-gray-600">₹1700</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+    </div>
+</main>
+<footer class="bg-[#F2E7DD] p-2 mt-4">
+    <div class="flex justify-between items-center">
+        <div class="flex flex-col items-center space-x-2">
+            <img alt="Footer Logo" class="h-8 w-8 rounded-full transition-all hover-animate" height="50" src="logo2.jpg" width="50"/>
+            <span class="text-xl font-great-vibes text-gray-800 fade-in">Floralland</span>
+        </div>
+        <div class="text-center text-gray-700">
+            <div class="flex justify-center space-x-4">
+                <a class="text-gray-700" href="#"><i class="fab fa-facebook"></i></a>
+                <a class="text-gray-700" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="text-gray-700" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="text-gray-700 mt-2">
+                <p><i class="fas fa-phone-alt"></i> +91 1234567890</p>
+                <p><i class="fas fa-envelope"></i> info@flowershop.com</p>
+            </div>
+        </div>
+        <div class="text-gray-700 text-sm">
+            <ul class="space-y-2">
+                <li><a class="text-gray-700" href="#">About Us</a></li>
+                <li><a class="text-gray-700" href="#">Occasions</a></li>
+                <li><a class="text-gray-700" href="#">Contact Us</a></li>
+                <li><a class="text-gray-700" href="#">Flowers by Type</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center text-gray-700 mt-4">
+        <p>Copyright © 2023 FlowerShop. All Rights Reserved.</p>
+    </div>
+</footer>
+<script>
+    function searchFlowers() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const flowerGrid = document.getElementById('flowerGrid');
+        const flowers = flowerGrid.getElementsByClassName('bg-white');
+
+        for (let i = 0; i < flowers.length; i++) {
+            const flowerName = flowers[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+            if (flowerName.includes(input)) {
+                flowers[i].style.display = '';
+            } else {
+                flowers[i].style.display = 'none';
+            }
+        }
+    }
+
+    document.querySelectorAll('.fade-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const href = this.getAttribute('href');
+            document.querySelector('main').classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500);
+        });
+    });
+</script>
+</body>
+</html>

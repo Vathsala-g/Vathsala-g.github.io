@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Place Order</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <style>
+        @keyframes confetti {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        .confetti {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #ff0;
+            animation: confetti 2s linear infinite;
+        }
+        .confetti:nth-child(2n) { background-color: #f00; }
+        .confetti:nth-child(3n) { background-color: #0f0; }
+        .confetti:nth-child(4n) { background-color: #00f; }
+        .confetti:nth-child(5n) { background-color: #ff0; }
+        .confetti:nth-child(6n) { background-color: #f0f; }
+        .confetti:nth-child(7n) { background-color: #0ff; }
+        .confetti:nth-child(8n) { background-color: #ff0; }
+        .confetti:nth-child(9n) { background-color: #f00; }
+        .confetti:nth-child(10n) { background-color: #0f0; }
+    </style>
+</head>
+<body class="bg-[#f7f3f7] font-['Roboto']">
+    <!-- Header -->
+    <header class="bg-[#F2E7DD] p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="flex flex-col items-center">
+                <img alt="Logo" class="h-8 w-8" height="32" src="logo2.jpg" width="32"/>
+                <span class="text-xs font-bold">Floralland</span>
+            </div>
+            <nav class="ml-4">
+                <a class="text-black mx-2" href="DupHome.html">Home</a>
+                <a class="text-black mx-2" href="#">Flowers By Type</a>
+                <a class="text-black mx-2" href="#">Occasions</a>
+                <a class="text-black mx-2" href="#">About Us</a>
+                <a class="text-black mx-2" href="#">Contact Us</a>
+            </nav>
+        </div>
+        <div class="flex items-center">
+            <div class="relative">
+                <input class="p-2 border border-gray-300 rounded-l" placeholder="Search Products" type="text"/>
+                <button class="absolute right-0 top-0 p-2 border border-gray-300 rounded-r">
+                    <i class="fas fa-search bg-transparent"></i>
+                </button>
+            </div>
+            <a class="ml-4" href="#">
+                <i class="fas fa-shopping-cart text-black"></i>
+            </a>
+            <a class="ml-4" href="#">
+                <i class="fas fa-user-circle text-black"></i>
+            </a>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="p-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Place Order</h1>
+            <button class="text-3xl font-bold">×</button>
+        </div>
+        <p class="mt-4">
+            Already have an account?
+            <a class="text-black underline" href="#">click here to login</a>
+        </p>
+        <div class="mt-8 border border-gray-300 rounded p-4">
+            <form id="orderForm">
+                <div class="mb-4">
+                    <label class="block text-black mb-2" for="email">Email:</label>
+                    <input class="w-full p-2 border border-gray-300 rounded" id="email" name="email" required="" type="email"/>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-black mb-2" for="phone">Phone Number:</label>
+                    <input class="w-full p-2 border border-gray-300 rounded" id="phone" name="phone" required="" type="tel"/>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-black mb-2" for="address">Address:</label>
+                    <textarea class="w-full p-2 border border-gray-300 rounded" id="address" name="address" required=""></textarea>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-black mb-2">Payment Method:</label>
+                    <div class="flex space-x-4">
+                        <button class="flex items-center space-x-2 p-2 border border-gray-300 rounded payment-method" data-method="Cash on Delivery" onclick="selectPaymentMethod(event)">
+                            <img alt="Cash on Delivery" class="h-6 w-6" height="24" src="https://storage.googleapis.com/a1aa/image/f_Kvk1RyaEasRqKDrrpy4UqEng-AHWpX5UUHPEq1FMA.jpg" width="24"/>
+                            <span>Cash on Delivery</span>
+                        </button>
+                        <button class="flex items-center space-x-2 p-2 border border-gray-300 rounded payment-method" data-method="PhonePe" onclick="selectPaymentMethod(event)">
+                            <img alt="PhonePe" class="h-6 w-6" height="24" src="https://storage.googleapis.com/a1aa/image/h05Om0pbPTU1UFEULTskxfImD21EEM9TAvFJFW8OBrY.jpg" width="24"/>
+                            <span>PhonePe</span>
+                        </button>
+                        <button class="flex items-center space-x-2 p-2 border border-gray-300 rounded payment-method" data-method="Google Pay" onclick="selectPaymentMethod(event)">
+                            <img alt="Google Pay" class="h-6 w-6" height="24" src="https://storage.googleapis.com/a1aa/image/294qVm7G483CWAw8TvgExZ8wUTFaNKCItyhbXz8FRg8.jpg" width="24"/>
+                            <span>Google Pay</span>
+                        </button>
+                        <button class="flex items-center space-x-2 p-2 border border-gray-300 rounded payment-method" data-method="Paytm" onclick="selectPaymentMethod(event)">
+                            <img alt="Paytm" class="h-6 w-6" height="24" src="https://storage.googleapis.com/a1aa/image/tk6ciHNSb9WXMbZS6eeaUVltsWpop39Q2-HGG9fF88A.jpg" width="24"/>
+                            <span>Paytm</span>
+                        </button>
+                    </div>
+                </div>
+                <button class="bg-[#F2E7DD] text-black p-2 rounded" type="submit">Place Order</button>
+            </form>
+        </div>
+    </main>
+    <!-- Order Confirmation Popup -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="orderConfirmation">
+        <div class="bg-white p-8 rounded shadow-lg text-center relative animate__animated animate__zoomIn">
+            <h2 class="text-2xl font-bold mb-4">Order Confirmed</h2>
+            <p class="text-4xl mb-4">🎉</p>
+            <p>Your order has been confirmed!</p>
+            <p>Date: <span id="orderDate"></span></p>
+            <button class="mt-4 bg-[#F2E7DD] text-black p-2 rounded" onclick="closePopup()">Close</button>
+            <div class="absolute inset-0 flex items-center justify-center" id="confettiContainer"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-[#F2E7DD] p-4 mt-8">
+        <div class="flex justify-between items-center">
+            <div class="flex flex-col items-center">
+                <img alt="Decorative image of a bicycle with flowers" class="h-8 w-8" height="32" src="logo2.jpg" width="32"/>
+                <span class="text-xs font-bold">Floralland</span>
+            </div>
+            <div class="text-center">
+                <div class="flex justify-center space-x-4">
+                    <a href="#"><i class="fab fa-facebook text-black"></i></a>
+                    <a href="#"><i class="fab fa-instagram text-black"></i></a>
+                    <a href="#"><i class="fab fa-twitter text-black"></i></a>
+                </div>
+                <p class="mt-2">+91 9876543210</p>
+                <p>info@example.com</p>
+                <p class="mt-2">Copyright © 2023 Prisha.in, All Rights Reserved</p>
+            </div>
+            <nav class="text-right">
+                <a class="block text-black" href="#">About Us</a>
+                <a class="block text-black" href="#">Occasions</a>
+                <a class="block text-black" href="#">Contact Us</a>
+                <a class="block text-black" href="#">Flowers By Type</a>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        let selectedPaymentMethod = null;
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            validateForm(event);
+        });
+
+        function validateForm(event) {
+            event.preventDefault();
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const address = document.getElementById('address');
+
+            let isValid = true;
+
+            if (!email.value) {
+                email.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                email.classList.remove('border-red-500');
+            }
+
+            if (!phone.value) {
+                phone.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                phone.classList.remove('border-red-500');
+            }
+
+            if (!address.value) {
+                address.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                address.classList.remove('border-red-500');
+            }
+
+            if (!selectedPaymentMethod) {
+                alert('Please select a payment method.');
+                isValid = false;
+            }
+
+            if (isValid) {
+                confirmOrder(event);
+            }
+        }
+
+        function selectPaymentMethod(event) {
+            event.preventDefault();
+            const buttons = document.querySelectorAll('.payment-method');
+            buttons.forEach(button => button.classList.remove('bg-gray-300'));
+            event.currentTarget.classList.add('bg-gray-300');
+            selectedPaymentMethod = event.currentTarget.getAttribute('data-method');
+        }
+
+        function confirmOrder(event) {
+            event.preventDefault();
+            const orderDate = new Date();
+            const formattedDate = orderDate.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('orderDate').textContent = formattedDate;
+            document.getElementById('orderConfirmation').classList.remove('hidden');
+            showConfetti();
+        }
+
+        function closePopup() {
+            document.getElementById('orderConfirmation').classList.add('hidden');
+            document.getElementById('confettiContainer').innerHTML = '';
+            window.location.reload(); // Reload the page to reset the form
+        }
+
+        function showConfetti() {
+            const confettiContainer = document.getElementById('confettiContainer');
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = `${Math.random() * 100 - 50}vw`;
+                confetti.style.top = `${Math.random() * 100 - 50}vh`;
+                confetti.style.animationDelay = `${Math.random() * 2}s`;
+                confettiContainer.appendChild(confetti);
+            }
+        }
+    </script>
+</body>
+</html>

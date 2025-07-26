@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gerbera Flowers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+<header class="bg-[#F2E7DD] p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-8">
+        <div class="flex flex-col items-center space-x-2">
+            <img alt="Logo" class="h-12 w-12 rounded-full" height="50" src="logo2.jpg" width="50"/>
+            <span class="text-2xl font-great-vibes text-gray-800 fade-in">Floralland</span>
+        </div>
+        <nav class="flex space-x-8">
+            <a class="text-gray-700" href="#">Home</a>
+            <a class="text-gray-700 fade-link" href="DupHome.html">Flowers by Type</a>
+            <a class="text-gray-700" href="#">Occasions</a>
+            <a class="text-gray-700" href="#">About Us</a>
+            <a class="text-gray-700" href="#">Contact Us</a>
+        </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+        <div class="relative">
+            <input class="p-2 border border-gray-300 rounded pl-4 pr-10" id="searchInput" oninput="searchFlowers()" placeholder="Search flowers" type="text"/>
+            <i class="fas fa-search absolute right-3 top-3 text-gray-500 cursor-pointer" onclick="searchFlowers()"></i>
+        </div>
+        <a class="text-gray-700" href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+        <a class="text-gray-700" href="#"><i class="fas fa-user"></i></a>
+    </div>
+</header>
+<main class="p-8 fade-in">
+    <h1 class="text-2xl text-left mb-8 font-great-vibes">Gerbera Flowers</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="flowerGrid">
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of red gerbera flowers in full bloom" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/zhOsFL-ijKnvmQL5-kM-J9V1Z93UKXL_FD5fyA3J8bc.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Red Gerberas</h2>
+            <p class="text-gray-600">₹1200</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of pink gerbera flowers arranged beautifully" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/7iMs4f3SbZ8Bgq9oO7cEY6QIeJIY8HsXx9Gks1pB2AQ.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Pink Gerberas</h2>
+            <p class="text-gray-600">₹1500</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of white gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/M3BvRnqAh7481P_t3mOREVdGfs0ee39-vf2N1CQmXfI.jpg" width="300"/>
+            <h2 class="text-lg mt-4">White Gerberas</h2>
+            <p class="text-gray-600">₹1800</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of yellow gerbera flowers in a glass vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/i8KijrWjNJrYViMb5wIbX_TSPPqnmgu9n9G6dQvK5lc.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Yellow Gerberas</h2>
+            <p class="text-gray-600">₹1350</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of orange gerbera flowers in a basket" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/CEGa_bDM3PFP25Al_t6nexwggZSiwiCef55ns1SuZxE.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Orange Gerberas</h2>
+            <p class="text-gray-600">₹1600</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of purple gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/YvXPhcTp6GOL-VccYDmQ4kP3Smf4SAJJ1MRqiOc7Hp0.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Purple Gerberas</h2>
+            <p class="text-gray-600">₹1400</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of peach gerbera flowers in a basket" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/xUFqEYT54KerYFI1oxg5xpf4N6BITW83gHBcfMbzpak.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Peach Gerberas</h2>
+            <p class="text-gray-600">₹1750</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of blue gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/8s2XyR4Td4kbVqUkN8kAmaXjpVqe05EfyhwGxDHbvj8.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Blue Gerberas</h2>
+            <p class="text-gray-600">₹1550</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of pink and white gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/wzzF9clZ-ZcotbDy8mMSDhzozvr9Wdx4wMttQuir74c.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Pink & White Gerberas</h2>
+            <p class="text-gray-600">₹1900</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of mixed color gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/jVi9U4UoLTsXXdSLyfRXCydeAy9pfZ_H0mvswdWKZQ0.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Mixed Gerberas</h2>
+            <p class="text-gray-600">₹1450</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of white and yellow gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/ztSCXjRKDFO3HRhHKK56VSbc299jS3rNvlNEl1bJnAw.jpg" width="300"/>
+            <h2 class="text-lg mt-4">White & Yellow Gerberas</h2>
+            <p class="text-gray-600">₹1650</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <img alt="A bouquet of red and yellow gerbera flowers in a vase" class="w-full h-48 object-cover rounded" height="400" src="https://storage.googleapis.com/a1aa/image/gvyiGUKTL4w3LhKe8yohqrlq5VgyrChtiJTPkow7gmI.jpg" width="300"/>
+            <h2 class="text-lg mt-4">Red & Yellow Gerberas</h2>
+            <p class="text-gray-600">₹1700</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+    </div>
+</main>
+<footer class="bg-[#F2E7DD] p-2 mt-4">
+    <div class="flex justify-between items-center">
+        <div class="flex flex-col items-center space-x-2">
+            <img alt="Footer Logo" class="h-8 w-8 rounded-full transition-all hover-animate" height="50" src="logo2.jpg" width="50"/>
+            <span class="text-xl font-great-vibes text-gray-800 fade-in">Floralland</span>
+        </div>
+        <div class="text-center text-gray-700">
+            <div class="flex justify-center space-x-4">
+                <a class="text-gray-700" href="#"><i class="fab fa-facebook"></i></a>
+                <a class="text-gray-700" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="text-gray-700" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="text-gray-700 mt-2">
+                <p><i class="fas fa-phone-alt"></i> +91 1234567890</p>
+                <p><i class="fas fa-envelope"></i> info@flowershop.com</p>
+            </div>
+        </div>
+        <div class="text-gray-700 text-sm">
+            <ul class="space-y-2">
+                <li><a class="text-gray-700" href="#">About Us</a></li>
+                <li><a class="text-gray-700" href="#">Occasions</a></li>
+                <li><a class="text-gray-700" href="#">Contact Us</a></li>
+                <li><a class="text-gray-700" href="#">Flowers by Type</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center text-gray-700 mt-4">
+        <p>Copyright © 2023 FlowerShop. All Rights Reserved.</p>
+    </div>
+</footer>
+<script>
+    function searchFlowers() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const flowerGrid = document.getElementById('flowerGrid');
+        const flowers = flowerGrid.getElementsByClassName('bg-white');
+
+        for (let i = 0; i < flowers.length; i++) {
+            const flowerName = flowers[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+            if (flowerName.includes(input)) {
+                flowers[i].style.display = '';
+            } else {
+                flowers[i].style.display = 'none';
+            }
+        }
+    }
+
+    document.querySelectorAll('.fade-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const href = this.getAttribute('href');
+            document.querySelector('main').classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500);
+        });
+    });
+</script>
+</body>
+</html>

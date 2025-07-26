@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hover-animate {
+            transition: transform 0.3s ease-in-out, z-index 0.3s ease-in-out;
+        }
+        .hover-animate:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-[#F2E7DD] p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="flex flex-col items-center">
+                <img alt="Logo" class="h-8 w-8" height="32" src="logo2.jpg" width="32"/>
+                <span class="text-xs font-medium">Floralland</span>
+            </div>
+            <nav class="ml-4">
+                <a class="text-black mx-2 font-medium hover-animate" href="DupHome.html">Home</a>
+                <a class="text-black mx-2 font-medium hover-animate" href="#">Flowers By Type</a>
+                <a class="text-black mx-2 font-medium hover-animate" href="#">Occasions</a>
+                <a class="text-black mx-2 font-medium hover-animate" href="#">About Us</a>
+                <a class="text-black mx-2 font-medium hover-animate" href="#">Contact Us</a>
+            </nav>
+        </div>
+        <div class="flex items-center">
+            <div class="relative">
+                <input class="p-2 border border-gray-300 rounded-l" placeholder="Search Products" type="text"/>
+                <button class="absolute right-0 top-0 p-2 border border-gray-300 rounded-r">
+                    <i class="fas fa-search bg-transparent"></i>
+                </button>
+            </div>
+            <a class="ml-4" href="#">
+                <i class="fas fa-shopping-cart text-black"></i>
+            </a>
+            <a class="ml-4" href="#">
+                <i class="fas fa-user-circle text-black"></i>
+            </a>
+        </div>
+    </header>
+    
+    <main class="p-4 flex-grow">
+        <h2 class="text-2xl mb-4">Your Cart</h2>
+        <div id="cartItems" class="bg-white p-4 rounded shadow"></div>
+        <h3 class="text-xl mt-4">Total Items: <span id="totalItems">0</span></h3>
+        <h3 class="text-xl mt-2">Total Price: $<span id="totalPrice">0.00</span></h3>
+        <button id="clearCart" class="bg-red-500 text-white px-4 py-2 rounded mt-4">Clear Cart</button>
+        <a href="placeOrder.html" class="bg-green-500 text-white px-4 py-2 rounded mt-4 inline-block">Place Order</a>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-[#F2E7DD] p-4">
+        <div class="flex justify-between items-center">
+            <div class="flex flex-col items-center">
+                <img alt="Decorative image of a bicycle with flowers" class="h-8 w-8" height="32" src="logo2.jpg" width="32"/>
+                <span class="text-xs font-medium">Floralland</span>
+            </div>
+            <div class="text-center">
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="hover-animate">
+                        <i class="fab fa-facebook text-black"></i>
+                    </a>
+                    <a href="#" class="hover-animate">
+                        <i class="fab fa-instagram text-black"></i>
+                    </a>
+                    <a href="#" class="hover-animate">
+                        <i class="fab fa-twitter text-black"></i>
+                    </a>
+                </div>
+                <p class="mt-2 font-medium hover-animate">+91 9876543210</p>
+                <p class="font-medium hover-animate">info@example.com</p>
+                <p class="mt-2 font-medium hover-animate">Copyright © 2023 Prisha.in, All Rights Reserved</p>
+            </div>
+            <nav class="text-right">
+                <a class="block text-black font-medium hover-animate" href="#">About Us</a>
+                <a class="block text-black font-medium hover-animate" href="#">Occasions</a>
+                <a class="block text-black font-medium hover-animate" href="#">Contact Us</a>
+                <a class="block text-black font-medium hover-animate" href="#">Flowers By Type</a>
+            </nav>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            const totalPriceElement = document.getElementById('totalPrice');
+            const totalItemsElement = document.getElementById('totalItems');
+            
+            function calculateTotal() {
+                let total = cart.reduce((sum, item) => sum + parseFloat(item.price), 0);
+                let totalItems = cart.length;
+                totalPriceElement.textContent = isNaN(total) ? "0.00" : total.toFixed(2);
+                totalItemsElement.textContent = totalItems;
+            }
+            
+            function displayCart() {
+                cartItemsContainer.innerHTML = '';
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = "<p class='text-gray-700'>Your cart is empty.</p>";
+                    totalPriceElement.textContent = "0.00";
+                    totalItemsElement.textContent = "0";
+                } else {
+                    cart.forEach((item, index) => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add("p-2", "border-b", "flex", "justify-between");
+                        itemDiv.innerHTML = `<span>${item.name} - $${item.price}</span>
+                                            <button class="text-red-500 remove-item" data-index="${index}">Remove</button>`;
+                        cartItemsContainer.appendChild(itemDiv);
+                    });
+                }
+                calculateTotal();
+            }
+            
+            displayCart();
+            
+            document.getElementById('clearCart').addEventListener('click', function () {
+                localStorage.removeItem('cart');
+                cart = [];
+                displayCart();
+            });
+            
+            cartItemsContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('remove-item')) {
+                    const index = e.target.getAttribute('data-index');
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    displayCart();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

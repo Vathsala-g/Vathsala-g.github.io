@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Burgues+Script&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white font-roboto flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-[#F2E7DD] py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="logo2.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                <span class="text-lg font-bold text-gray-700 font-burgues-script">Floralland</span>
+                <nav class="space-x-4">
+                    <a href="#" class="text-gray-700">Home</a>
+                    <a href="#" class="text-gray-700">Flowers By Type</a>
+                    <a href="#" class="text-gray-700">Occasions</a>
+                    <a href="#" class="text-gray-700">About Us</a>
+                    <a href="#" class="text-gray-700">Contact Us</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search Flowers" class="border border-gray-300 rounded px-2 py-1 pl-8">
+                    <i class="fas fa-search absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-700"></i>
+                </div>
+                <i class="fas fa-shopping-cart text-gray-700"></i>
+                <i class="fas fa-user-circle text-gray-700"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Form -->
+    <main class="flex flex-col items-center py-12 flex-grow">
+        <div class="bg-[#F2E7DD] p-8 rounded-lg shadow-md w-96">
+            <h1 class="text-3xl font-bold mb-4 text-center">Profile</h1>
+            <form id="profileForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Name</label>
+                    <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email ID</label>
+                    <input type="email" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Gender</label>
+                    <select class="w-full border border-gray-300 rounded px-3 py-2 mt-1">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Pin Code</label>
+                    <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">City</label>
+                    <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">State</label>
+                    <input type="text" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required>
+                </div>
+                <button type="button" onclick="saveProfile()" class="w-full bg-[#895737] text-white py-2 rounded">Save Profile</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#F2E7DD] py-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex flex-col items-center">
+                <img src="logo2.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+                <span class="text-sm font-bold text-gray-700 font-burgues-script">Floralland</span>
+            </div>
+            <div class="text-center">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="#" class="text-gray-700"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-700"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-700"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-700"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="text-gray-700">info@flowerhub.com</p>
+                <p class="text-gray-700">+91 1234567890</p>
+                <p class="text-gray-700">Copyrights © 2014 Flowerhub. All Rights Reserved</p>
+            </div>
+            <div class="text-right">
+                <a href="#" class="block text-gray-700">About Us</a>
+                <a href="#" class="block text-gray-700">Locations</a>
+                <a href="#" class="block text-gray-700">Contact Us</a>
+                <a href="#" class="block text-gray-700">Flowers by Type</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function saveProfile() {
+            alert("Successfully saved information!");
+        }
+    </script>
+</body>
+</html>

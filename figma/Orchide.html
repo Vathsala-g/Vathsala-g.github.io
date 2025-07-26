@@ -1,0 +1,213 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Orchids</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .popup {
+            animation: popup 0.3s ease-in-out;
+        }
+        @keyframes popup {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+<header class="bg-[#F2E7DD] p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-8">
+        <div class="flex flex-col items-center space-x-2">
+            <img alt="Logo" class="h-12 w-12 rounded-full" height="50" src="logo2.jpg" width="50"/>
+            <span class="text-2xl font-great-vibes text-gray-800 fade-in">Floralland</span>
+        </div>
+        <nav class="flex space-x-8">
+            <a class="text-gray-700" href="DupHome.html">Home</a>
+            <a class="text-gray-700 fade-link" href="DupHome.html">Flowers by Type</a>
+            <a class="text-gray-700" href="#">Occasions</a>
+            <a class="text-gray-700" href="About us.html">About Us</a>
+            <a class="text-gray-700" href="Contact us.html">Contact Us</a>
+        </nav>
+    </div>
+    <div class="flex items-center space-x-4">
+        <div class="relative">
+            <input class="p-2 border border-gray-300 rounded pl-4 pr-10" id="searchInput" oninput="searchFlowers()" placeholder="Search flowers" type="text"/>
+            <i class="fas fa-search absolute right-3 top-3 text-gray-500 cursor-pointer" onclick="searchFlowers()"></i>
+        </div>
+        <a class="text-gray-700" href="Cart.html"><i class="fas fa-shopping-cart"></i></a>
+        <a class="text-gray-700" href="#"><i class="fas fa-user"></i></a>
+    </div>
+</header>
+<main class="p-8 fade-in">
+    <h1 class="text-2xl text-left mb-8 font-great-vibes">Orchids</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="flowerGrid">
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Dendrobium orchids with white and purple flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/505070132/photo/fresh-pink-orchid-in-pot.jpg?s=612x612&w=0&k=20&c=eRivTG-l5FE05CTG8M6HBteFHviy9i9riBxXxvUejx8=" width="300"/>
+            <h2 class="text-lg mt-4">Dendrobiuma</h2>
+            <p class="text-gray-600">₹600</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Cattleya orchids with large, vibrant pink and purple flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/2199212044/photo/pink-butterfly-orchid-orchid-flower-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=mi2fE1iUKisIfaITqPYHbLziYSBfiq876HpnwlgzkD8=" width="300"/>
+            <h2 class="text-lg mt-4">Cattleya</h2>
+            <p class="text-gray-600">₹780</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Miltonia orchids with delicate white and pink flowers" class="w-full h-48 object-cover rounded" height="400" src="https://plus.unsplash.com/premium_photo-1676253709098-8f336062797b?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="300"/>
+            <h2 class="text-lg mt-4">Miltonia</h2>
+            <p class="text-gray-600">₹1000</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Vanilla orchids with creamy white flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/184985955/photo/white-orchid-in-a-white-case-against-mint-green-background.webp?s=1024x1024&w=is&k=20&c=qkO_vnJhkthYH5L4ZW4zPQkqk5yH9uNhgoMSD71Uxjg=" width="300"/>
+            <h2 class="text-lg mt-4">Vanilla orchid</h2>
+            <p class="text-gray-600">₹1250</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Dark orchids with deep purple flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/544474604/photo/mini-orchid-plant-in-a-white-pot.webp?s=1024x1024&w=is&k=20&c=JtIVSUvXHi1Q3MratU0gRKvBjB_NJnzCi0SssQr6E4k=" width="300"/>
+            <h2 class="text-lg mt-4">Dark orchid</h2>
+            <p class="text-gray-600">₹1460</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Encyclia orchids with green and purple flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/1349956794/photo/pink-orchids-isolated.webp?s=1024x1024&w=is&k=20&c=3qTbsh8j23uOVIxPPOqdzHiKZ9lepDkvvu9KFZM2RMk=" width="300"/>
+            <h2 class="text-lg mt-4">Encyclia</h2>
+            <p class="text-gray-600">₹1700</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Bee orchids with yellow and brown flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/636119082/photo/moth-orchid-in-clay-pot-on-light-grey-background.webp?s=1024x1024&w=is&k=20&c=_Co-f7tcVSY6aU7WAO9kEbbjOoX8wQrHXf6hfhEnBTU=" width="300"/>
+            <h2 class="text-lg mt-4">Bee Orchids</h2>
+            <p class="text-gray-600">₹1800</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Lady orchids with pink and white flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/186656234/photo/orchid-plant.webp?s=1024x1024&w=is&k=20&c=2iQ-5m8vXRP8eUiHHBfoy2VXXpweX4z1y33uKsDuW4c=" width="300"/>
+            <h2 class="text-lg mt-4">Lady Orchids</h2>
+            <p class="text-gray-600">₹1370</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Brassia orchids with yellow and brown spider-like flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/1129133385/photo/flowers-phalaenopsis-brother-picot-sweet-mini-orchids.jpg?s=612x612&w=0&k=20&c=qZHPt5mWM6Uy7XZvDPm-OJ6I-XmCy0PJlyejtyaby0s=" width="300"/>
+            <h2 class="text-lg mt-4">Brassia Orchid</h2>
+            <p class="text-gray-600">₹1222</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Acampe orchids with small yellow and red flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/468141178/photo/pink-orchid.jpg?s=612x612&w=0&k=20&c=VOR6Ar94Kg6DZqWigYrr7qiyXDZpcAzYIHvLHiIg66c=" width="300"/>
+            <h2 class="text-lg mt-4">Acampe</h2>
+            <p class="text-gray-600">₹1800</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Calanthe orchids with white and pink flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/951077420/photo/yellow-phalaenopsis-orchid.jpg?s=612x612&w=0&k=20&c=2slm60qLdYRVSuElIOJyRTOcy6fQM0tky_bsRs49FdM=" width="300"/>
+            <h2 class="text-lg mt-4">Calanthe</h2>
+            <p class="text-gray-600">₹1370</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center cursor-pointer" onclick="showPopup(this)">
+            <img alt="A bouquet of Miltonia orchids with white and purple flowers" class="w-full h-48 object-cover rounded" height="400" src="https://media.istockphoto.com/id/636119470/photo/moth-orchid-in-clay-pot-on-light-grey-background.jpg?s=612x612&w=0&k=20&c=FAlRHxe0G2F-T2qcOgaR7ZJCk4NE1ZddVUc4A-9QGPA=" width="300"/>
+            <h2 class="text-lg mt-4">Miltonia</h2>
+            <p class="text-gray-600">₹1050</p>
+            <button class="mt-2 bg-[#895737] text-white py-2 px-4 w-full rounded">Add to cart</button>
+        </div>
+    </div>
+</main>
+<footer class="bg-[#F2E7DD] p-2 mt-4">
+    <div class="flex justify-between items-center">
+        <div class="flex flex-col items-center space-x-2">
+            <img alt="Footer Logo" class="h-8 w-8 rounded-full transition-all hover-animate" height="50" src="logo2.jpg" width="50"/>
+            <span class="text-xl font-great-vibes text-gray-800 fade-in">Floralland</span>
+        </div>
+        <div class="text-center text-gray-700">
+            <div class="flex justify-center space-x-4">
+                <a class="text-gray-700" href="#"><i class="fab fa-facebook"></i></a>
+                <a class="text-gray-700" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="text-gray-700" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="text-gray-700 mt-2">
+                <p><i class="fas fa-phone-alt"></i> +91 1234567890</p>
+                <p><i class="fas fa-envelope"></i> info@flowershop.com</p>
+            </div>
+        </div>
+        <div class="text-gray-700 text-sm">
+            <ul class="space-y-2">
+                <li><a class="text-gray-700" href="#">About Us</a></li>
+                <li><a class="text-gray-700" href="#">Occasions</a></li>
+                <li><a class="text-gray-700" href="#">Contact Us</a></li>
+                <li><a class="text-gray-700" href="#">Flowers by Type</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="text-center text-gray-700 mt-4">
+        <p>Copyright © 2023 FlowerShop. All Rights Reserved.</p>
+    </div>
+</footer>
+<script>
+    function searchFlowers() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const flowerGrid = document.getElementById('flowerGrid');
+        const flowers = flowerGrid.getElementsByClassName('bg-white');
+
+        for (let i = 0; i < flowers.length; i++) {
+            const flowerName = flowers[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+            if (flowerName.includes(input)) {
+                flowers[i].style.display = '';
+            } else {
+                flowers[i].style.display = 'none';
+            }
+        }
+    }
+
+    function showPopup(element) {
+        element.classList.add('popup');
+        setTimeout(() => {
+            element.classList.remove('popup');
+        }, 300);
+    }
+
+    document.querySelectorAll('.fade-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const href = this.getAttribute('href');
+            document.querySelector('main').classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500);
+        });
+    });
+</script>
+</body>
+</html>

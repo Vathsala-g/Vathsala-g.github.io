@@ -1,0 +1,370 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Roses
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .popup-animation {
+    transition: transform 0.3s ease-in-out;
+   }
+   .popup-animation:hover {
+    transform: scale(1.05);
+   }
+   .highlight {
+    animation: highlight 0.5s ease-in-out;
+   }
+   @keyframes highlight {
+    0% { background-color: yellow; }
+    100% { background-color: white; }
+   }
+   .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+   }
+   @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+   }
+   .fade-out {
+    animation: fadeOut 0.5s forwards;
+   }
+   @keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+   }
+  </style>
+ </head>
+ <body class="bg-gray-100 font-roboto">
+  <header class="bg-[#F2E7DD] p-4 flex justify-between items-center">
+   <div class="flex items-center">
+    <div class="flex flex-col items-center space-x-2">
+     <img alt="Logo" class="h-10 w-10 rounded-full" height="50" src="logo2.jpg" width="50"/>
+     <span class="text-2xl font-great-vibes text-gray-800 fade-in">
+      Floralland
+     </span>
+    </div>
+    <nav class="ml-4">
+     <a class="text-gray-700 mx-2 fade-link" href="DupHome.html">
+      Home
+     </a>
+     <a class="text-gray-700 mx-2 fade-link" href="DupHome.html">
+      Flowers by Type
+     </a>
+     <a class="text-gray-700 mx-2 fade-link" href="DupHome.html">
+      Occasions
+     </a>
+     <a class="text-gray-700 mx-2 fade-link" href="About us.html">
+      About Us
+     </a>
+     <a class="text-gray-700 mx-2 fade-link" href="Contact us.html">
+      Contact Us
+     </a>
+    </nav>
+   </div>
+   <div class="flex items-center">
+    <div class="relative">
+     <input class="border rounded p-1 pl-8" id="searchInput" placeholder="Search Flowers" type="text"/>
+     <i class="fas fa-search absolute left-2 top-2 text-gray-500">
+     </i>
+    </div>
+    <a class="ml-4 text-gray-700" href="Cart.html">
+     <i class="fas fa-shopping-cart">
+     </i>
+     <span class="ml-1 text-sm" id="cartCount">
+      (0)
+     </span>
+    </a>
+    <a class="ml-4 text-gray-700" href="#">
+     <i class="fas fa-user">
+     </i>
+    </a>
+   </div>
+  </header>
+  <main class="p-4 fade-in">
+   <h1 class="text-2xl mb-4">
+    ROSES
+   </h1>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="flowerGrid">
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Crimson Passion" class="w-full h-48 object-cover rounded" height="200" src="https://images.unsplash.com/photo-1729151634645-1f4ed2938f0b?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Crimson Passion
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹850
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Golden Glow" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/1385512862/photo/wedding-accessories-gold-rings-in-a-glass-box-on-a-green-moss-and-a-bouquet-of-flowers-decor.jpg?s=612x612&w=0&k=20&c=8T-5woqFYI2dBlgqLqfY5tTLHoW3XsMk1JHgje6S0II=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Golden Glow
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹950
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Pink Delight" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/694581778/photo/elegant-bouquet-of-roses.webp?a=1&s=612x612&w=0&k=20&c=J3U9-I2SJilagkkQJW9joNwxkmEDOvqOE-UK7T-qDXQ=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Pink Delight
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1200
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="White Elegance" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/1066086980/photo/floral-composition-with-lovely-pale-pink-peonies-topview.jpg?s=612x612&w=0&k=20&c=pOu3tGKFjh9ASoygJeU3I83A1ObvPo_BA7lWAu-NFW8=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      White Elegance
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1500
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Lavender Dreams" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/1212642991/photo/a-white-bouquet-of-fresh-clean-identical-roses-on-a-wooden-table-served-in-a-vintage-style.jpg?s=612x612&w=0&k=20&c=szK9USq2vWqu9YhxzAnMPj2nUuhzHQu5Nj04Ck9mOis=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Lavender Dreams
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1800
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Peach Perfection" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/863481982/photo/flower-composition-on-a-gray-background-wedding-and-festive-decor-bouquet-from-spring-flowers.jpg?s=612x612&w=0&k=20&c=HkXvf_Ls1upmbeV0JLmIPtNsKieg_oJqXAisK1qNTQI=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Peach Perfection
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1000
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Coral Charm" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/1159672041/photo/beautiful-bouquet-of-flowers-in-a-vase.jpg?s=612x612&w=0&k=20&c=LgzaXPed6P1lQAEGXigeaj35agQ-wuIYdo06KzIyQAw=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Coral Charm
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹2000
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Blush Beauty" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/2168044632/photo/fake-flowers-on-a-wooden-table-in-coffee-shop.jpg?s=612x612&w=0&k=20&c=_vCanijZPg4W3QitIqrC4ufTGc75nWYeBk-TqWk4yAA=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Blush Beauty
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹2200
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Sunset Splendor" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/847681892/photo/floral-composition-with-roses-and-mix-flowers-in-glass-vase-on-a-gray-background.jpg?s=612x612&w=0&k=20&c=QAU9GMU-X4fSlDDAnfWwwaAEx4qNMNhBksirsWaGllY=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Sunset Splendor
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹900
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Ruby Radiance" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/1179420364/photo/beautiful-bouquet-of-mixed-flowers-in-round-box-the-work-of-the-florist-at-a-flower-shop.jpg?s=612x612&w=0&k=20&c=BJf6eWswdxxJdHBfvFL4hAzKrpDBxWKv_JIHdNv5ans=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Ruby Radiance
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1300
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Emerald Envy" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/1220135175/photo/beautiful-bridal-bouquet-of-white-and-yellow-peonies-and-roses-on-the-table-in-the-restaurant.jpg?s=612x612&w=0&k=20&c=AWX-hDwkaAuedGbJPfGFD-q_ASz1YSJpjgC2KaC4_FU=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Emerald Envy
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1700
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+    <div class="bg-white p-4 rounded shadow popup-animation flower-item">
+     <img alt="Sapphire Serenity" class="w-full h-48 object-cover rounded" height="200" src="https://media.istockphoto.com/id/696741792/photo/beautiful-bouquet-made-of-different-flowers-in-glass-vase-colorful-color-mix-flower.jpg?s=612x612&w=0&k=20&c=h7rJsTaOnSmo2ew-1Bj1EUHpQd_13z8QTY16sw_AlsM=" width="200"/>
+     <h2 class="mt-2 text-center flower-name">
+      Sapphire Serenity
+     </h2>
+     <p class="text-center text-gray-700">
+      ₹1100
+     </p>
+     <button class="bg-[#895737] text-white w-full py-2 mt-2 rounded add-to-cart">
+      Add to cart
+     </button>
+    </div>
+   </div>
+  </main>
+  <footer class="bg-[#F2E7DD] p-2 mt-4">
+   <div class="flex justify-between items-center">
+    <div class="flex flex-col items-center space-x-2">
+     <img alt="Footer Logo" class="h-8 w-8 rounded-full transition-all hover-animate" height="50" src="logo2.jpg" width="50"/>
+     <span class="text-xl font-great-vibes text-gray-800 fade-in">
+      Floralland
+     </span>
+    </div>
+    <div class="text-gray-700 text-sm">
+     <a class="block" href="#">
+      About Us
+     </a>
+     <a class="block" href="#">
+      Occasions
+     </a>
+     <a class="block" href="#">
+      Contact Us
+     </a>
+     <a class="block" href="#">
+      Flowers by Type
+     </a>
+    </div>
+   </div>
+   <div class="text-center text-gray-700 text-sm mt-2">
+    <div class="flex justify-center space-x-2">
+     <a class="text-gray-700" href="#">
+      <i class="fab fa-facebook">
+      </i>
+     </a>
+     <a class="text-gray-700" href="#">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a class="text-gray-700" href="#">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+    </div>
+    <p class="mt-1">
+     Contact: +91 1234567890
+    </p>
+    <p>
+     Email: info@flowershop.com
+    </p>
+    <p class="mt-1">
+     © 2023 FlowerShop. All Rights Reserved
+    </p>
+    <p>
+     <a class="text-gray-700" href="#">
+      Terms of Use
+     </a>
+    </p>
+   </div>
+  </footer>
+  <script>
+   document.getElementById('searchInput').addEventListener('input', function() {
+    const searchValue = this.value.toLowerCase();
+    const flowerGrid = document.getElementById('flowerGrid');
+    const flowers = flowerGrid.getElementsByClassName('flower-item');
+    
+    for (let i = 0; i < flowers.length; i++) {
+        const flowerName = flowers[i].getElementsByClassName('flower-name')[0].innerText.toLowerCase();
+        if (flowerName.includes(searchValue)) {
+            flowers[i].style.display = '';
+            flowers[i].classList.add('highlight');
+        } else {
+            flowers[i].style.display = 'none';
+            flowers[i].classList.remove('highlight');
+        }
+    }
+   });
+
+   const cartItems = [];
+   const cartCount = document.getElementById('cartCount');
+
+   document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const flowerItem = this.closest('.flower-item');
+        const flowerName = flowerItem.querySelector('.flower-name').innerText;
+        const flowerPrice = flowerItem.querySelector('p').innerText;
+
+        cartItems.push({ name: flowerName, price: flowerPrice });
+        updateCart();
+    });
+   });
+
+   function updateCart() {
+    cartCount.innerText = `(${cartItems.length})`;
+   }
+
+   document.querySelectorAll('.fade-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const href = this.getAttribute('href');
+        document.querySelector('main').classList.add('fade-out');
+        setTimeout(() => {
+            window.location.href = href;
+        }, 500);
+    });
+   });
+   
+   document.addEventListener('DOMContentLoaded', function () {
+       let cart = JSON.parse(localStorage.getItem('cart')) || [];
+       updateCartCount();
+
+       document.querySelectorAll('.add-to-cart').forEach(button => {
+           button.addEventListener('click', function () {
+               const flowerItem = this.closest('.flower-item');
+               const flowerName = flowerItem.querySelector('.flower-name').innerText;
+               const flowerPrice = flowerItem.querySelector('p').innerText;
+
+               cart.push({ name: flowerName, price: flowerPrice });
+               localStorage.setItem('cart', JSON.stringify(cart));
+               updateCartCount();
+           });
+       });
+
+       function updateCartCount() {
+           document.getElementById('cartCount').innerText = `(${cart.length})`;
+       }
+   });
+  </script>
+ </body>
+</html>

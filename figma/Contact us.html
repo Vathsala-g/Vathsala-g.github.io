@@ -1,0 +1,116 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-in-out;
+      }
+      .hover-animate:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        alert('Submitted');
+      }
+    </script>
+  </head>
+  <body class="bg-gray-100 font-roboto">
+    <!-- Header -->
+    <header class="bg-[#F2E7DD] py-4 fade-in">
+      <div class="container mx-auto flex justify-between items-center px-4 space-x-4">
+        <div class="flex flex-col items-center space-y-1">
+          <img alt="Floralland Logo" class="h-8 w-8 rounded-full hover-animate" height="32" src="logo2.jpg" width="32"/>
+          <span class="text-lg font-great-vibes text-black">Floralland</span>
+        </div>
+        <nav class="flex-grow flex justify-start space-x-4">
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="DupHome.html">Home</a>
+          
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="DupHome.html">Flowers By Type</a>
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="DupHome.html">Occasions</a>
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="DupHome.html">Contact Us</a>
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="About us.html">About Us</a>
+        </nav>
+        <div class="search-and-icons flex space-x-4">
+          <div class="relative">
+            <input class="px-2 py-1 border rounded hover-animate pl-8" placeholder="Search" type="text"/>
+            <i class="fas fa-search absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-700"></i>
+          </div>
+          <i class="fas fa-shopping-cart text-gray-700 hover-animate"></i>
+          <i class="fas fa-user text-gray-700 hover-animate"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8">
+      <h1 class="text-center text-2xl font-bold text-gray-700 mb-8">Contact Us</h1>
+      <form class="max-w-lg mx-auto space-y-4 bg-[#F2E7DD] p-8 rounded-lg" onsubmit="handleSubmit(event)">
+        <input class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Name" type="text"/>
+        <input class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Contact no" type="text"/>
+        <input class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Email" type="email"/>
+        <input class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Address" type="text"/>
+        <textarea class="w-full border border-gray-300 rounded px-4 py-2 h-32" placeholder="Any messages"></textarea>
+        <button class="bg-[#895737] text-white rounded px-4 py-2" type="submit">Submit</button>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#F2E7DD] py-8 relative z-10 mt-auto">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex flex-col items-center space-y-1">
+          <img alt="Floralland Logo" class="h-8 w-8 rounded-full hover-animate" height="32" src="logo2.jpg" width="32"/>
+          <span class="text-lg font-great-vibes text-black">Floralland</span>
+        </div>
+        <div class="text-center ml-8">
+          <div class="flex justify-center space-x-4 mb-4">
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="text-gray-700">
+            <p class="hover-animate">
+              <i class="fas fa-phone-alt"></i>
+              +1 234 567 890
+            </p>
+            <p class="hover-animate">
+              <i class="fas fa-envelope"></i>
+              floralland@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="text-right text-gray-700 space-y-2">
+          <a class="block hover:text-gray-900 hover-animate" href="#">About Us</a>
+          <a class="block hover:text-gray-900 hover-animate" href="#">Occasions</a>
+          <a class="block hover:text-gray-900 hover-animate" href="#">Contact Us</a>
+          <a class="block hover:text-gray-900 hover-animate" href="#">Flowers By Type</a>
+        </div>
+      </div>
+      <div class="text-center text-gray-700 mt-4">
+        <p class="hover-animate">
+          Copyright © 2023, Floralland. All Rights Reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Floralland</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <style>
+      .hover-animate:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .fade-in-out {
+        animation: fadeInOut 4s infinite;
+      }
+
+      @keyframes fadeInOut {
+        0%, 100% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Dropdown menu styles */
+      .dropdown {
+        position: relative;
+      }
+
+      /* Dropdown container, hides the menu by default */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        border-radius: 8px;
+        z-index: 10;
+      }
+
+      /* Dropdown menu will be shown when parent is focused (mimicking select behavior) */
+      .dropdown:focus-within .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-item {
+        padding: 12px 16px;
+        color: #800000;
+        text-decoration: none;
+        display: block;
+      }
+
+      /* Hover effect on dropdown items */
+      .dropdown-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      /* Navbar container */
+      nav {
+        display: flex;
+        justify-content: space-between; /* Space between items */
+        align-items: center; /* Align items vertically */
+        gap: 20px; /* Space between the items */
+      }
+
+      /* Style for each navigation link */
+      nav a {
+        display: inline-block; /* Display links horizontally */
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #4A4A4A;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: #800000; /* Change color on hover */
+      }
+
+      /* Search and icons container */
+      .search-and-icons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+    </style>
+    <script>
+      function toggleDropdown(menuId) {
+        const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+        const mainContent = document.getElementById('main-content');
+        
+        dropdownMenus.forEach(menu => {
+          if (menu.id === menuId) {
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+          } else {
+            menu.style.display = 'none';
+          }
+        });
+
+        mainContent.style.zIndex = '0';
+      }
+    </script>
+  </head>
+  <body class="font-roboto relative min-h-screen flex flex-col">
+    <header class="bg-[#F2E7DD] py-4 relative z-10">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex flex-col items-center space-y-1">
+          <img alt="Floralland Logo" class="h-8 w-8 rounded-full hover-animate" height="32" src="logo2.jpg" width="32"/>
+          <span class="text-lg font-great-vibes text-black">Floralland</span>
+        </div>
+
+        <!-- Navbar items aligned horizontally -->
+        <nav class="flex-grow flex justify-start">
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#" onclick="toggleDropdown('home')">Home</a>
+
+          <!-- Dropdown menu structure -->
+          <div class="dropdown">
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#" onclick="toggleDropdown('flowers-menu')">Flowers By Type</a>
+            <ul class="dropdown-menu" id="flowers-menu">
+              <li><a class="dropdown-item" href="Roses.html">Roses</a></li>
+              <li><a class="dropdown-item" href="Orchide.html">Orchids</a></li>
+              <li><a class="dropdown-item" href="Lillies.html">Lilies</a></li>
+              <li><a class="dropdown-item" href="Mixedflower.html">Mixed Flowers</a></li>
+              <li><a class="dropdown-item" href="Yellow.html">Yellow Roses</a></li>
+              <li><a class="dropdown-item" href="Gerberas.html">Gerberas</a></li>
+              <li><a class="dropdown-item" href="Redrose.html">Red Roses</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#" onclick="toggleDropdown('occasions-menu')">Occasions</a>
+            <ul class="dropdown-menu" id="occasions-menu">
+              <div class="p-2">
+                <span class="font-bold text-gray-700">Regular Occasion</span>
+                <li><a href="Birthday.html" class="dropdown-item">Birthday</a></li> 
+                <li><a href="Anniversary.html" class="dropdown-item">Anniversary</a></li> 
+                <li><a href="Thanking.html" class="dropdown-item">Thanking</a></li>
+                <li><a href="congratulation.html" class="dropdown-item">Congratulation</a></li>
+                <div class="p-2">
+                  <span class="font-bold text-gray-700">Special Occasion</span>
+                  <li><a href="Newborn.html" class="dropdown-item">Newborn</a></li>
+                  <li><a href="Achivement.html" class="dropdown-item">Achievement</a></li>
+                  <li><a href="Retirement.html" class="dropdown-item">Retirement</a></li>
+                  <li><a href="Housewarm.html" class="dropdown-item">House Warming</a></li>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="About us.html" onclick="toggleDropdown('about-us')">About Us</a>
+          <a class="text-gray-700 hover:text-gray-900 hover-animate" href="Contact us.html" onclick="toggleDropdown('contact-us')">Contact Us</a>
+        </nav>
+
+        <!-- Search and icon buttons -->
+        <div class="search-and-icons">
+          <div class="relative">
+            <input class="px-2 py-1 border rounded hover-animate pl-8" placeholder="Search Flowers" type="text"/>
+            <i class="fas fa-search absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-700"></i>
+          </div>
+          <i class="fas fa-shopping-cart text-gray-700 hover-animate"></i>
+          <i class="fas fa-user text-gray-700 hover-animate"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto text-center py-12 px-4 relative z-10 flex-grow" id="main-content">
+      <h1 class="text-3xl font-bold text-[#C08081] fade-in-out">
+        The Floralland
+      </h1>
+      <img alt="Beautiful flower bouquet" class="mx-auto mb-6 -mt-4" height="100" src="download (1).jpg" width="200"/>
+      <p class="text-xl italic text-gray-600 mt-4 fade-in">
+        "Blooming Moments, Delivered to Your Doorstep"
+      </p>
+      <p class="text-gray-700 mt-4 max-w-2xl mx-auto hover-animate text-left">
+        Our flower bouquet booking website is your go-to destination for sending fresh, handcrafted blooms to loved ones or brightening your own space. With a simple, user-friendly interface, you can browse through a wide variety of stunning bouquets for every occasion — from birthdays and anniversaries to "just because" moments. Each bouquet is thoughtfully crafted, ensuring the perfect combination of color, fragrance, and beauty.
+      </p>
+    </main>
+
+    <footer class="bg-[#F2E7DD] py-8 relative z-10 mt-auto">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <div class="flex flex-col items-center space-y-1">
+          <img alt="Floralland Logo" class="h-8 w-8 rounded-full hover-animate" height="32" src="logo2.jpg" width="32"/>
+          <span class="text-lg font-great-vibes text-black">Floralland</span>
+        </div>
+        <div class="text-center ml-8">
+          <div class="flex justify-center space-x-4 mb-4">
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="text-gray-700">
+            <p class="hover-animate">
+              <i class="fas fa-phone-alt"></i>
+              +1 234 567 890
+            </p>
+            <p class="hover-animate">
+              <i class="fas fa-envelope"></i>
+              floralland@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="text-right text-gray-700 space-y-2">
+          <a class="block hover:text-gray-900 hover-animate" href="#">About Us</a>
+          <a class="block hover:text-gray-900 hover-animate" href="#">Occasions</a>
+          <a class="block hover:text-gray-900 hover-animate" href="#">Contact Us</a>
+          <a class="block hover:text-gray-900 hover-animate" href="#">Flowers By Type</a>
+        </div>
+      </div>
+      <div class="text-center text-gray-700 mt-4">
+        <p class="hover-animate">
+          Copyrights © 2024 Floralland. All Rights Reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   The Floralland
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .hover-animate:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .fade-in-out {
+            animation: fadeInOut 4s infinite;
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+  </style>
+ </head>
+ <body class="font-roboto relative min-h-screen flex flex-col">
+  <header class="bg-[#F2E7DD] py-4 relative z-10">
+   <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="flex items-center space-x-2">
+     <img alt="Floralland Logo" class="h-12 w-12 rounded-full hover-animate" height="48" src="logo2.jpg" width="48"/>
+     <span class="text-xl font-bold text-gray-700">
+        Floralland
+       </span>
+    </div>
+    <nav class="space-x-4">
+     <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+      Home
+     </a>
+     <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+      Flowers By Type
+     </a>
+     <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+      About Us
+     </a>
+     <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+      Occasions
+     </a>
+     <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+      Order Us
+     </a>
+    </nav>
+    <div class="flex space-x-4 items-center">
+     <div class="relative">
+      <input class="px-2 py-1 border rounded hover-animate pl-8" placeholder="Search Flowers" type="text"/>
+      <i class="fas fa-search absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-700">
+      </i>
+     </div>
+     <i class="fas fa-shopping-cart text-gray-700 hover-animate">
+     </i>
+     <i class="fas fa-user text-gray-700 hover-animate">
+     </i>
+    </div>
+   </div>
+  </header>
+  <main class="container mx-auto text-center py-12 px-4 relative z-10 flex-grow">
+   <h1 class="text-3xl font-bold text-[#C08081] fade-in-out">
+    The Floralland
+   </h1>
+   <img alt="Beautiful flower bouquet" class="mx-auto mb-6 -mt-4" height="100" src="download (1).jpg" width="200"/>
+   <p class="text-xl italic text-gray-600 mt-4 fade-in">
+    "Blooming Moments, Delivered to Your Doorstep"
+   </p>
+   <p class="text-gray-700 mt-4 max-w-2xl mx-auto hover-animate">
+    Our flower bouquet booking website is your go-to destination for sending fresh, handcrafted blooms to loved ones or brightening your own space. With a simple, user-friendly interface, you can browse through a wide variety of stunning bouquets for every occasion — from birthdays and anniversaries to "just because" moments. Each bouquet is thoughtfully crafted, ensuring the perfect combination of color, fragrance, and beauty.
+   </p>
+   <a href="sign up.html">
+    <button class="mt-6 px-6 py-2 bg-[#C08081] text-white rounded-full hover:bg-[#A06061] hover-animate">
+     Sign in
+    </button>
+   </a>
+  </main>
+  <footer class="bg-[#F2E7DD] py-8 relative z-10 mt-auto">
+   <div class="container mx-auto flex justify-between items-center px-4">
+    <div class="flex items-center">
+     <img alt="Floralland Logo" class="h-12 w-12 rounded-full hover-animate" height="48" src="logo2.jpg" width="48"/>
+     <span class="text-xl font-bold text-gray-700">
+        Floralland
+       </span>
+    </div>
+    
+    <div class="text-center">
+     <div class="flex justify-center space-x-4 mb-4">
+      <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+       <i class="fab fa-linkedin">
+       </i>
+      </a>
+      <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+       <i class="fab fa-facebook">
+       </i>
+      </a>
+      <a class="text-gray-700 hover:text-gray-900 hover-animate" href="#">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+     </div>
+     <div class="text-gray-700">
+      <p class="hover-animate">
+       <i class="fas fa-phone-alt">
+       </i>
+       +1 234 567 890
+      </p>
+      <p class="hover-animate">
+       <i class="fas fa-envelope">
+       </i>
+       floralland@gmail.com
+      </p>
+     </div>
+    </div>
+    <div class="text-right text-gray-700 space-y-2">
+     <a class="block hover:text-gray-900 hover-animate" href="#">
+      About Us
+     </a>
+     <a class="block hover:text-gray-900 hover-animate" href="#">
+      Occasions
+     </a>
+     <a class="block hover:text-gray-900 hover-animate" href="#">
+      Contact Us
+     </a>
+     <a class="block hover:text-gray-900 hover-animate" href="#">
+      Flowers By Type
+     </a>
+    </div>
+   </div>
+   <div class="text-center text-gray-700 mt-4">
+    <p class="hover-animate">
+     Copyrights © 2024 Floralland. All Rights Reserved
+    </p>
+   </div>
+  </footer>
+ </body>
+</html>
